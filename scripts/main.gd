@@ -54,6 +54,7 @@ const RESTART_POLL_SEC    := 5.0
 var _restart_held: bool    = false
 var _restart_elapsed: float = 0.0
 var _restart_poll_t: float  = 0.0
+var _movement_mode: String  = ""   # "direct" | "teleport"; lo fija el servidor
 
 
 
@@ -102,6 +103,7 @@ func _process(delta: float) -> void:
 	if _restart_poll_t >= RESTART_POLL_SEC:
 		_restart_poll_t = 0.0
 		_poll_server_restart()
+		_poll_server_movement()
 
 	if _halls.is_empty():
 		return
@@ -174,6 +176,44 @@ func _on_restart_poll_response(result: int, code: int, _headers: PackedStringArr
 	var data = JSON.parse_string(body.get_string_from_utf8())
 	if data is Dictionary and data.get("restart", false):
 		_trigger_restart()
+
+
+# ── Movement mode (direct / teleport, controlado por el servidor) ──────────────
+
+func _poll_server_movement() -> void:
+	if server_url.is_empty() or device_id.is_empty():
+		return
+	var http := HTTPRequest.new()
+	add_child(http)
+	http.request_completed.connect(_on_movement_poll_response.bind(http))
+	http.request(server_url + "/client/" + device_id + "/movement")
+
+func _on_movement_poll_response(result: int, code: int, _headers: PackedStringArray,
+		body: PackedByteArray, http: HTTPRequest) -> void:
+	http.queue_free()
+	if result != HTTPRequest.RESULT_SUCCESS or code != 200:
+		return
+	var data = JSON.parse_string(body.get_string_from_utf8())
+	if data is Dictionary and data.has("movement"):
+		_apply_movement_mode(String(data["movement"]))
+
+## Habilita exactamente un esquema de locomoción. "direct" = joystick;
+## cualquier otro valor = teletransporte (default seguro).
+func _apply_movement_mode(mode: String) -> void:
+	if mode == _movement_mode:
+		return
+	_movement_mode = mode
+	var direct := mode == "direct"
+	var md: Node = $Player/LeftHand.get_node_or_null("MovementDirect")
+	var tp_left: Node = $Player/LeftHand.get_node_or_null("FunctionTeleport")
+	var tp_right: Node = $Player/RightHand.get_node_or_null("FunctionTeleport")
+	if md:
+		md.enabled = direct
+	if tp_left:
+		tp_left.enabled = not direct
+	if tp_right:
+		tp_right.enabled = not direct
+	print("Movement mode → %s" % mode)
 
 
 # ── Device ID (ANDROID_ID) ────────────────────────────────────────────────────
