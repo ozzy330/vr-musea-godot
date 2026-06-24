@@ -10,6 +10,7 @@ extends CanvasLayer
 @export var show_on_start: bool = true
 
 var _server_url: String = ""
+var _device_id: String = ""
 var _polling: bool = false
 
 
@@ -41,9 +42,14 @@ func _ready() -> void:
 
 
 func _update_device_id_label() -> void:
+	# Main._ready() corre después que DebugHud._ready(), así que el device_id
+	# solo está disponible tras esperar un frame (ver _ready). Lo cacheamos aquí
+	# para que el poll de HUD lo use en su URL per-device.
 	var main := get_tree().get_root().get_node_or_null("Main")
-	if main and "device_id" in main and device_id_label:
-		device_id_label.text = "ID: " + main.device_id
+	if main and "device_id" in main:
+		_device_id = main.device_id
+		if device_id_label:
+			device_id_label.text = "ID: " + main.device_id
 
 
 func _fit_panel() -> void:
@@ -55,10 +61,12 @@ func _fit_panel() -> void:
 
 
 func _poll_hud_state() -> void:
-	if _polling or not http:
+	# _device_id se setea un frame después de _ready (ver _update_device_id_label),
+	# así que los primeros ticks del timer se saltan hasta tenerlo.
+	if _polling or not http or _device_id.is_empty():
 		return
 	_polling = true
-	http.request(_server_url + "/client/hud")
+	http.request(_server_url + "/client/" + _device_id + "/hud")
 
 
 func _on_hud_state_received(_result: int, response_code: int,

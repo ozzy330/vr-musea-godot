@@ -17,7 +17,6 @@ extends Node3D
 		update_configuration_warnings()
 @export var endpoint_world:   String = "/world"
 @export var endpoint_ready:   String = "/client/ready"
-@export var endpoint_restart: String = "/client/restart"
 @export var media_local_prefix: String = "res://media/"
 @export var media_server_path:  String = "/media/"
 
@@ -160,12 +159,12 @@ func _trigger_restart() -> void:
 	get_tree().reload_current_scene.call_deferred()
 
 func _poll_server_restart() -> void:
-	if server_url.is_empty():
+	if server_url.is_empty() or device_id.is_empty():
 		return
 	var http := HTTPRequest.new()
 	add_child(http)
 	http.request_completed.connect(_on_restart_poll_response.bind(http))
-	http.request(server_url + endpoint_restart)
+	http.request(server_url + "/client/" + device_id + "/restart")
 
 func _on_restart_poll_response(result: int, code: int, _headers: PackedStringArray,
 		body: PackedByteArray, http: HTTPRequest) -> void:
