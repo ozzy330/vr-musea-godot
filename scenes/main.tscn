@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bhyt0yxy1lvok"]
+
+[ext_resource type="Script" uid="uid://nohfq3bwn8bs" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://b5bqg5cysy36e" path="res://scenes/hall.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://ux7e8tqawm6s" path="res://hdr/autumn_park_2k.hdr" id="5_tbgi4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0wfyh"]
+size = Vector2(25.99, 25.99)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0wfyh"]
+points = PackedVector3Array(-7.5, 0, -7.5, -7.5, 0, 7.499999, 7.499999, 0, -7.5, 7.499999, 0, 7.499999)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tbgi4"]
+panorama = ExtResource("5_tbgi4")
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_tefeu"]
+sky_material = SubResource("PanoramaSkyMaterial_tbgi4")
+
+[sub_resource type="Environment" id="Environment_o6xl0"]
+background_mode = 2
+sky = SubResource("Sky_tefeu")
+sky_rotation = Vector3(0, -2.8797932, 0)
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D" unique_id=671727546]
+script = ExtResource("1_jyhfs")
+server_url = "https://vr-musea.ozzy330.com"
+hall_scene = ExtResource("3_jyhfs")
+hall_spacing = 26.0
+hall_visibility_distance = 40.0
+
+[node name="StartXR" parent="." unique_id=815826490 instance=ExtResource("2_0wfyh")]
+
+[node name="Player" parent="." unique_id=2064738804 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1928413, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=943988729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+mesh = SubResource("PlaneMesh_0wfyh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=739571091]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=273081156]
+shape = SubResource("ConvexPolygonShape3D_0wfyh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1119908744]
+transform = Transform3D(-0.91540426, -0.28085196, 0.28837007, -0.0702932, 0.81690705, 0.57246995, -0.3963508, 0.503771, -0.7675422, 0, 0, 0)
+shadow_enabled = true
+shadow_blur = 2.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=818302262]
+environment = SubResource("Environment_o6xl0")

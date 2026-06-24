@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d2f1xw28nx25v"]
+
+[ext_resource type="Script" uid="uid://bn7vltsb28b00" path="res://scripts/debug_hud.gd" id="1_36slo"]
+
+[node name="DebugHUD" type="CanvasLayer" unique_id=1594920020 node_paths=PackedStringArray("fps_label", "ip_label", "url_label", "device_id_label", "poll_timer", "http")]
+layer = 128
+script = ExtResource("1_36slo")
+fps_label = NodePath("Panel/VBoxContainer/FPSLabel")
+ip_label = NodePath("Panel/VBoxContainer/IPLabel")
+url_label = NodePath("Panel/VBoxContainer/URLLabel")
+device_id_label = NodePath("Panel/VBoxContainer/IDLabel")
+poll_timer = NodePath("PoolRequest")
+http = NodePath("HTTPRequest")
+show_on_start = false
+
+[node name="Panel" type="Panel" parent="." unique_id=518508302]
+offset_right = 91.0
+offset_bottom = 106.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1421766383]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 77.0
+
+[node name="FPSLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1013627738]
+layout_mode = 2
+text = "FPS: --"
+
+[node name="IPLabel" type="Label" parent="Panel/VBoxContainer" unique_id=971622137]
+layout_mode = 2
+text = "IP: --"
+
+[node name="URLLabel" type="Label" parent="Panel/VBoxContainer" unique_id=2083312492]
+layout_mode = 2
+text = "URL: --"
+
+[node name="IDLabel" type="Label" parent="Panel/VBoxContainer" unique_id=2038252677]
+layout_mode = 2
+text = "ID: --"
+
+[node name="PoolRequest" type="Timer" parent="." unique_id=135487187]
+wait_time = 3.0
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1340430645]

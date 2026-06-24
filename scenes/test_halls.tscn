@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://l6rkorw55xhh"]
+
+[ext_resource type="PackedScene" uid="uid://b5bqg5cysy36e" path="res://scenes/hall.tscn" id="1_cqoa4"]
+
+[node name="Node3D" type="Node3D" unique_id=1393230021]
+
+[node name="Hall" parent="." unique_id=329571561 instance=ExtResource("1_cqoa4")]
+
+[node name="Hall2" parent="Hall/tunnel/tunnel/SocketOut" parent_id_path=PackedInt32Array(329571561, 521002236, 1922151937) index="0" unique_id=287820500 instance=ExtResource("1_cqoa4")]
+transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 9, 0, 1.15)
+
+[node name="back_side" parent="Hall/tunnel/tunnel/SocketOut/Hall2/DoorIn" parent_id_path=PackedInt32Array(287820500, 1472312144) index="1" unique_id=13502239]
+visible = false
+
+[editable path="Hall"]
+[editable path="Hall/hall"]
+[editable path="Hall/cypress_pot"]
+[editable path="Hall/cypress_pot2"]
+[editable path="Hall/cypress_pot3"]
+[editable path="Hall/tunnel"]
+[editable path="Hall/tunnel/tunnel/SocketOut/Hall2"]
+[editable path="Hall/tunnel/tunnel/SocketOut/Hall2/hall"]
+[editable path="Hall/tunnel/tunnel/SocketOut/Hall2/cypress_pot"]
+[editable path="Hall/tunnel/tunnel/SocketOut/Hall2/cypress_pot2"]
+[editable path="Hall/tunnel/tunnel/SocketOut/Hall2/cypress_pot3"]
+[editable path="Hall/tunnel/tunnel/SocketOut/Hall2/tunnel"]

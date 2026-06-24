@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dt7ni4qbh0eip"]
+
+[ext_resource type="Script" uid="uid://be2f88lh3kbcu" path="res://scripts/tunnel.gd" id="1_sitcv"]
+[ext_resource type="PackedScene" uid="uid://bdl2mdajj0lu" path="res://assets/tunnel/tunnel.gltf" id="1_yxtfq"]
+[ext_resource type="PackedScene" uid="uid://h0oe8nwt52ex" path="res://assets/plant_pot1/pot_plant1.glb" id="3_w4w55"]
+[ext_resource type="PackedScene" uid="uid://sxxf7lha0wl3" path="res://assets/pot_plant2/pot_plan2.glb" id="4_pnhxe"]
+[ext_resource type="PackedScene" uid="uid://datakqmk3jbha" path="res://assets/cypress_pot/cypress_pot.glb" id="5_sms2w"]
+[ext_resource type="PackedScene" uid="uid://mbspjvgepobk" path="res://assets/trepadora_g/trepadora_grande.glb" id="6_dh7aw"]
+[ext_resource type="PackedScene" uid="uid://jneoau2dcwfm" path="res://assets/trepadora_p/trepadora_pe.glb" id="7_eu200"]
+[ext_resource type="PackedScene" uid="uid://b7nw7hskw2ch3" path="res://assets/bench/classic__park_bench.glb" id="8_pnhxe"]
+
+[node name="Node3D" type="Node3D" unique_id=521002236 node_paths=PackedStringArray("socket_in", "socket_out")]
+script = ExtResource("1_sitcv")
+socket_in = NodePath("tunnel/SocketIn")
+socket_out = NodePath("tunnel/SocketOut")
+
+[node name="tunnel" parent="." unique_id=366423679 instance=ExtResource("1_yxtfq")]
+
+[node name="SocketIn" type="Node3D" parent="tunnel" unique_id=87904723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.836218, 0, 1.5059104)
+
+[node name="SocketOut" type="Node3D" parent="tunnel" unique_id=1922151937]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.9840293, 0, -12.818498)
+
+[node name="pot_plan2" parent="tunnel/SocketOut" unique_id=712381347 instance=ExtResource("4_pnhxe")]
+transform = Transform3D(-1.0853538e-07, 0, -2.483, 0, 2.483, 0, 2.483, 0, -1.0853538e-07, -20.340046, 0.013708532, 9.203401)
+
+[node name="cypress_pot" parent="tunnel/SocketOut" unique_id=1102599431 instance=ExtResource("5_sms2w")]
+transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, -19.568493, 0, 8.082432)
+
+[node name="trepadora_grande" parent="tunnel/SocketOut" unique_id=1447669188 instance=ExtResource("6_dh7aw")]
+transform = Transform3D(0.47500005, 0, 0, 0, 0.475, 0, 0, 0, 0.47500005, -24.820753, 3.5097077, 16.580236)
+
+[node name="trepadora_grande2" parent="tunnel/SocketOut" unique_id=1292808282 instance=ExtResource("6_dh7aw")]
+transform = Transform3D(0.47500005, 0, 0, 0, 0.475, 0, 0, 0, 0.47500005, -11.55018, 3.5097077, 16.580236)
+
+[node name="trepadora_pe" parent="tunnel/SocketOut" unique_id=1214442359 instance=ExtResource("7_eu200")]
+transform = Transform3D(0.072885066, 0, 1.152698, 0, 1.155, 0, -1.152698, 0, 0.072885066, -21.844494, 5.1375413, 15.0912)
+
+[node name="trepadora_pe2" parent="tunnel/SocketOut" unique_id=996650186 instance=ExtResource("7_eu200")]
+transform = Transform3D(-0.15417355, 0.021514663, -1.1444619, -0.021113222, 1.154546, 0.024548473, 1.144469, 0.024197416, -0.15371971, -14.141703, 4.890558, 14.231776)
+
+[node name="cypress_pot2" parent="tunnel/SocketOut" unique_id=1636213875 instance=ExtResource("5_sms2w")]
+transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, -11.449337, 0, 8.082432)
+
+[node name="cay_001" parent="tunnel/SocketOut/cypress_pot2" index="1" unique_id=518626975]
+transform = Transform3D(1.772, 0, 0, 0, 1.772, 0, 0, 0, 1.772, 0.0342865, 5.713387, -0.009718992)
+
+[node name="cypress_pot3" parent="tunnel/SocketOut" unique_id=1092924277 instance=ExtResource("5_sms2w")]
+transform = Transform3D(-0.3301164, 0, -0.2258831, 0, 0.4, 0, 0.2258831, 0, -0.3301164, -10.432277, 0, 6.882375)
+
+[node name="pot_plant2" parent="tunnel/SocketOut" unique_id=189197701 instance=ExtResource("3_w4w55")]
+transform = Transform3D(-1.7837533, 0, -3.3926558, 0, 3.833, 0, 3.3926558, 0, -1.7837533, -5.5359926, 0.00088410714, -2.593377)
+
+[node name="pot_plan3" parent="tunnel/SocketOut" unique_id=488919127 instance=ExtResource("4_pnhxe")]
+transform = Transform3D(-1.0853538e-07, 0, -2.483, 0, 2.483, 0, 2.483, 0, -1.0853538e-07, -6.856195, 0.013708532, -2.0770178)
+
+[node name="trepadora_pe3" parent="tunnel/SocketOut" unique_id=414904968 instance=ExtResource("7_eu200")]
+transform = Transform3D(1.0804877, 0, 0.40813154, 0, 1.155, 0, -0.40813154, 0, 1.0804877, -9.044348, 4.928075, -1.943615)
+
+[node name="trepadora_pe4" parent="tunnel/SocketOut" unique_id=1676453448 instance=ExtResource("7_eu200")]
+transform = Transform3D(1.0374877, 0, 0.50758666, 0, 1.155, 0, -0.50758666, 0, 1.0374877, -12.03461, 4.9383135, -0.70898676)
+
+[node name="trepadora_pe5" parent="tunnel/SocketOut" unique_id=214161141 instance=ExtResource("7_eu200")]
+transform = Transform3D(0.8057891, 0, 0.8274835, 0, 1.155, 0, -0.8274835, 0, 0.8057891, -17.36071, 4.9383135, 3.4223075)
+
+[node name="trepadora_grande3" parent="tunnel/SocketOut" unique_id=142035933 instance=ExtResource("6_dh7aw")]
+transform = Transform3D(0.27615315, 0, 0.21503356, 0, 0.35, 0, -0.21503356, 0, 0.27615315, -14.596658, 3.9882457, 0.78828144)
+
+[node name="Sketchfab_Scene" parent="tunnel/SocketOut" unique_id=936678505 instance=ExtResource("8_pnhxe")]
+transform = Transform3D(1.006394, 0, -0.8862573, 0, 1.341, 0, 0.8862573, 0, 1.006394, -17.50129, 1.9073486e-06, 5.653613)
+
+[node name="Sketchfab_Scene2" parent="tunnel/SocketOut" unique_id=853198123 instance=ExtResource("8_pnhxe")]
+transform = Transform3D(0.8717281, 0, -1.0190048, 0, 1.341, 0, 1.0190048, 0, 0.8717281, -15.34924, 1.9073486e-06, 3.2971277)
+
+[editable path="tunnel/SocketOut/cypress_pot2"]

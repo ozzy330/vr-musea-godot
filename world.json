@@ -1,0 +1,144 @@
+{
+  "halls": [
+    {
+      "hallId": "fundacion",
+      "slots": [
+        {
+          "wall": 0, "slot": 0,
+          "title": "Primer director del CITIC: Dr. Marcelo Jenkins Coronas. Junio 2011 - Junio 2012",
+          "asset": { "imagen": "res://media/images/1_1.jpg" }
+        },
+        {
+          "wall": 0, "slot": 1,
+          "title": "Recorte de prensa del Semanario Universidad sobre la creación del CITIC (29 de junio de 2011)",
+          "asset": { "imagen": "res://media/images/1_2.jpg" }
+        },
+        {
+          "wall": 0, "slot": 2,
+          "title": "Público asistente en el acto de inauguración oficial del CITIC en septiembre de 2011",
+          "asset": { "imagen": "res://media/images/1_3.jpg" }
+        },
+        {
+          "wall": 1, "slot": 0,
+          "title": "Rectora de la UCR, Dra. Yamileth González García, brindando su discurso en la inauguración del CITIC",
+          "asset": { "imagen": "res://media/images/1_4.jpg" }
+        },
+        {
+          "wall": 1, "slot": 1,
+          "title": "Proyectos de Investigación Vigentes en el CITIC en el 2012",
+          "asset": { "imagen": "res://media/images/1_5.jpg" }
+        },
+        {
+          "wall": 1, "slot": 2,
+          "title": "Equipo de investigadores y colaboradores del CITIC en el 2012",
+          "asset": { "imagen": "res://media/images/1_6.jpg" }
+        }
+      ]
+    },
+    {
+      "hallId": "consolidacion",
+      "slots": [
+        {
+          "wall": 0, "slot": 0,
+          "title": "Directora del CITIC: Dra. Gabriela Marín Raventós. Junio 2012 - Junio 2017",
+          "asset": { "imagen": "res://media/images/2_1.jpg" }
+        },
+        {
+          "wall": 0, "slot": 1,
+          "title": "Stand del CITIC en la Expo UCR 2015 con demostración de simulación de ataques cuánticos (10 de abril de 2015)",
+          "asset": { "imagen": "res://media/images/2_2.jpg" }
+        },
+        {
+          "wall": 0, "slot": 2,
+          "title": "Mesa de expositores e inauguración oficial del evento de celebración del 5to Aniversario del CITIC (30 de junio de 2016)",
+          "asset": { "imagen": "res://media/images/2_3.jpg" }
+        },
+        {
+          "wall": 1, "slot": 0,
+          "title": "Participación de investigadores del CITIC en el Foro Mundial de Tecnología de Información (WITFOR) 2016 (septiembre de 2016)",
+          "asset": { "imagen": "res://media/images/2_4.jpg" }
+        },
+        {
+          "wall": 1, "slot": 1,
+          "title": "Taller interactivo de robótica educativa para niños con la Fundación Omar Dengo (10 de noviembre de 2014)",
+          "asset": { "imagen": "res://media/images/2_5.jpg" }
+        },
+        {
+          "wall": 1, "slot": 2,
+          "title": "Representantes e investigadores del CITIC en el Congreso Latinoamericano de Informática (CLEI) 2014 (22 de septiembre de 2014)",
+          "asset": { "imagen": "res://media/images/2_6.jpg" }
+        }
+      ]
+    },
+    {
+      "hallId": "expansion",
+      "slots": [
+        {
+          "wall": 0, "slot": 0,
+          "title": "Director del CITIC: Dr. Marcelo Jenkins Coronas. Periodos de continuidad Junio 2017 - Junio 2024",
+          "asset": { "imagen": "res://media/images/3_1.jpg" }
+        },
+        {
+          "wall": 0, "slot": 1,
+          "title": "Fachada exterior de las modernas instalaciones del nuevo edificio de la ECCI y CITIC (9 de octubre de 2018)",
+          "asset": { "imagen": "res://media/images/3_2.jpg" }
+        },
+        {
+          "wall": 0, "slot": 2,
+          "title": "Delegación e investigadoras del CITIC participando en la mesa redonda del evento latinoamericano \"Latinity\" 2019 (7 de septiembre de 2019)",
+          "asset": { "imagen": "res://media/images/3_3.jpg" }
+        },
+        {
+          "wall": 1, "slot": 0,
+          "title": "Charla y capacitación metodológica en el \"Taller para Diseños de Productos\" (28 de marzo de 2019)",
+          "asset": { "imagen": "res://media/images/3_4.jpg" }
+        },
+        {
+          "wall": 1, "slot": 1,
+          "title": "Sesión interactiva de capacitación en el taller sobre el rol de Dueño de Producto (Product Owner) (18 de febrero de 2020)",
+          "asset": { "imagen": "res://media/images/3_5.jpg" }
+        },
+        {
+          "wall": 1, "slot": 2,
+          "title": "Charla técnica y conferencia sobre topografía brindada al personal del ICE (27 de febrero de 2020)",
+          "asset": { "imagen": "res://media/images/3_6.jpg" }
+        }
+      ]
+    },
+    {
+      "hallId": "innovacion",
+      "slots": [
+        {
+          "wall": 0, "slot": 0,
+          "title": "Directora del CITIC: Dra. Alexandra Martínez Porras. Junio 2024 - Junio 2028",
+          "asset": { "imagen": "res://media/images/4_1.jpg" }
+        },
+        {
+          "wall": 0, "slot": 1,
+          "title": "Charla inaugural del seminario de investigación sobre procesamiento de lenguaje natural (NLP) (26 de septiembre de 2024)",
+          "asset": { "imagen": "res://media/images/4_2.jpg" }
+        },
+        {
+          "wall": 0, "slot": 2,
+          "title": "Charla invitada en Agricultura Inteligente en el Seminario de Investigacion del CITIC (junio de 2025)",
+          "asset": { "imagen": "res://media/images/4_3.jpg" }
+        },
+        {
+          "wall": 1, "slot": 0,
+          "title": "Investigadores del CITIC en evento de entrega de fondos CIHRED-UCR (noviembre de 2025)",
+          "asset": { "imagen": "res://media/images/4_4.jpg" }
+        },
+        {
+          "wall": 1, "slot": 1,
+          "title": "Presentación del proyecto de salud y computación \"De Píxeles al Diagnóstico\" en las Jornadas JoCICI 2026 (27 de mayo de 2026)",
+          "asset": { "imagen": "res://media/images/4_5.jpg" }
+        },
+        {
+          "wall": 1, "slot": 2,
+          "title": "Acto cultural y de apertura oficial de las Jornadas de Computación JoCICI 2026 (26 de mayo de 2026)",
+          "asset": { "imagen": "res://media/images/4_6.jpg" }
+        }
+      ]
+    }
+  ]
+}

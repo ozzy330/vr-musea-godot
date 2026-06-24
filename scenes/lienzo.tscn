@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cnem6x3708nl4"]
+
+[ext_resource type="Script" uid="uid://bn0iolj7nuorv" path="res://scripts/lienzo.gd" id="1_54wmy"]
+[ext_resource type="Texture2D" uid="uid://bvro116qtiy23" path="res://media/images/gatito.jpg" id="2_xgobl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54wmy"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nwvwn"]
+size = Vector2(1.865, 1.582)
+
+[node name="Lienzo" type="Node3D" unique_id=990350539 node_paths=PackedStringArray("title_label")]
+script = ExtResource("1_54wmy")
+imagen = ExtResource("2_xgobl")
+title_label = NodePath("TitleLabel")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2062668360]
+material_override = SubResource("StandardMaterial3D_54wmy")
+mesh = SubResource("QuadMesh_nwvwn")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1962796571]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1639432227]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true

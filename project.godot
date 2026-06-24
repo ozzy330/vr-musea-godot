@@ -1,0 +1,52 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="vrmusea"
+run/main_scene="uid://bhyt0yxy1lvok"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+XRToolsUserSettings="*uid://bqgb8i74tm0t"
+XRToolsRumbleManager="*uid://by853dk86g1qw"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/MetaMultimeshInstance3D/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg")
+
+[input]
+
+left_grip={
+"deadzone": 0.2,
+"events": []
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/msaa_3d=2
+vrs/mode=2
+
+[xr]
+
+openxr/enabled=true
+openxr/foveation_level=3
+openxr/foveation_dynamic=true
+shaders/enabled=true

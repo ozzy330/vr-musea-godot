@@ -1,0 +1,57 @@
+# Blender 5.1.1 MTL File: 'hall_basic.blend'
+# www.blender.org
+
+newmtl Dirt_Ground
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd -s 1.5 1.5 1 T_GroundDirt_03_basecolor.jpg
+map_Ns -s 1.5 1.5 1 T_GroundDirt_03_roughness.jpg
+map_Bump -s 1.5 1.5 1 -bm 1.000000 T_GroundDirt_03_normalOGL.jpg
+
+newmtl Gravel_White
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Ns Gravel023_4K_Roughness.jpg
+map_Bump -bm 1.000000 Gravel023_4K_NormalGL.jpg
+
+newmtl Hard_White_Plaster
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd 1_Color.jpg
+map_Ns Concrete024_4K-JPG_Roughness.jpg
+map_Bump -bm 1.000000 Concrete024_4K-JPG_NormalGL.jpg
+
+newmtl fancy_picture_frame_01.001
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd fancy_picture_frame_01_diff_8k.jpg
+map_Ns fancy_picture_frame_01_rough_8k.jpg
+map_Bump -bm 1.000000 fancy_picture_frame_01_nor_gl_8k.exr
+
+newmtl fancy_picture_frame_01.002
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd fancy_picture_frame_01_diff_8k.jpg
+map_Ns fancy_picture_frame_01_rough_8k.jpg
+map_Bump -bm 1.000000 fancy_picture_frame_01_nor_gl_8k.exr

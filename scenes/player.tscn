@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://be8qbmt0fe144"]
+
+[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_fjrip"]
+[ext_resource type="Script" uid="uid://ck4yn3hxuobj7" path="res://addons/godot-xr-tools/player/player_body.gd" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://d2f1xw28nx25v" path="res://scenes/debug_hud.tscn" id="4_smehm"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_tuyoq"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="8_ur7pv"]
+
+[node name="Player" type="XROrigin3D" unique_id=2064738804]
+world_scale = 1.5
+
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=457990371]
+
+[node name="LeftHand" type="XRController3D" parent="." unique_id=1633814112]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="LeftHand" unique_id=1550493543 instance=ExtResource("1_g2els")]
+
+[node name="MovementDirect" parent="LeftHand" unique_id=729432278 instance=ExtResource("2_qlg0r")]
+max_speed = 2.0
+strafe = true
+
+[node name="Viewport2Din3D" parent="LeftHand" unique_id=392656843 node_paths=PackedStringArray("fps_label", "ip_label", "url_label", "poll_timer", "http") instance=ExtResource("3_fjrip")]
+enabled = false
+collision_layer = 5242884
+scene = ExtResource("4_smehm")
+viewport_size = Vector2(500, 400)
+transparent = 1
+scene_properties_keys = PackedStringArray("debug_hud.gd", "fps_label", "ip_label", "url_label", "device_id_label", "poll_timer", "http", "show_on_start")
+fps_label = NodePath("Viewport/DebugHUD/Panel/VBoxContainer/FPSLabel")
+ip_label = NodePath("Viewport/DebugHUD/Panel/VBoxContainer/IPLabel")
+url_label = NodePath("Viewport/DebugHUD/Panel/VBoxContainer/URLLabel")
+poll_timer = NodePath("Viewport/DebugHUD/PoolRequest")
+http = NodePath("Viewport/DebugHUD/HTTPRequest")
+show_on_start = true
+
+[node name="FunctionTeleport" parent="LeftHand" unique_id=466307281 instance=ExtResource("8_ur7pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+
+[node name="RightHand" type="XRController3D" parent="." unique_id=1928601095]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="RightHand" unique_id=572577380 instance=ExtResource("2_qhqgy")]
+
+[node name="MovementTurn" parent="RightHand" unique_id=1701891922 instance=ExtResource("4_tuyoq")]
+turn_mode = 2
+smooth_turn_speed = 1.0
+
+[node name="FunctionTeleport" parent="RightHand" unique_id=200473183 instance=ExtResource("8_ur7pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+can_teleport_color = Color(0.560713, 0.9999998, 0.52922016, 1)
+cant_teleport_color = Color(1, 0.494251, 0.42709014, 1)
+no_collision_color = Color(0.36824915, 0.5251361, 0.9709304, 1)
+player_height = 0.9
+
+[node name="XRToolsPlayerBody" type="CharacterBody3D" parent="." unique_id=1918274575]
+collision_layer = 3
+script = ExtResource("3_qhqgy")
+metadata/_custom_type_script = "uid://ck4yn3hxuobj7"

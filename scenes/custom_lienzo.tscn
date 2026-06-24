@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dpud6shicggky"]
+
+[ext_resource type="PackedScene" uid="uid://cnem6x3708nl4" path="res://scenes/lienzo.tscn" id="1_pyd0h"]
+[ext_resource type="Script" uid="uid://cn2rgsxoidmyb" path="res://scripts/custom_lienzo.gd" id="1_wneiu"]
+[ext_resource type="PackedScene" uid="uid://by42w3ddw5lsl" path="res://assets/stand/Stand.gltf" id="3_wneiu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pyd0h"]
+radius = 0.7243399
+
+[node name="CustomLienzo" type="Node3D" unique_id=2067657686 node_paths=PackedStringArray("title_label")]
+script = ExtResource("1_wneiu")
+title_label = NodePath("Stand/Label3D")
+
+[node name="Lienzo" parent="." unique_id=990350539 node_paths=PackedStringArray("title_label") instance=ExtResource("1_pyd0h")]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, -0.1, 0.015, -0.023)
+imagen = null
+title_label = NodePath("../Stand/Label3D")
+ancho = 0.71
+alto = 0.4
+
+[node name="Area3D" type="Area3D" parent="Lienzo" unique_id=735845071]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lienzo/Area3D" unique_id=1059657471]
+shape = SubResource("SphereShape3D_pyd0h")
+
+[node name="Stand" parent="." unique_id=682995016 instance=ExtResource("3_wneiu")]
+transform = Transform3D(0.20000002, 0, 0, 0, -8.742279e-09, -0.20000002, 0, 0.20000002, -8.742279e-09, -0.13068977, 0.25508595, -0.63321644)
+
+[node name="Label3D" type="Label3D" parent="Stand" unique_id=564707695]
+transform = Transform3D(-1, 5.0143605e-08, -7.161251e-08, -4.140712e-08, 0.449771, 0.8931437, 7.699473e-08, 0.8931437, -0.449771, 0, 1.3711817, -0.031336784)
+text = "Titulooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
+font_size = 12
+outline_size = 4
+autowrap_mode = 3
+width = 205.0
