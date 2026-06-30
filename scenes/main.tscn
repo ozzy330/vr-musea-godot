@@ -36,7 +36,7 @@ hall_visibility_distance = 40.0
 [node name="StartXR" parent="." unique_id=815826490 instance=ExtResource("2_0wfyh")]
 
 [node name="Player" parent="." unique_id=2064738804 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1928413, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2.1928413, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=943988729]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)

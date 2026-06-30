@@ -5,3 +5,6 @@
 # Build artifacts (APKs, lightmap bakes) — regenerables, no van a git
 /builds/
 /bakes/
+
+# API key del agente Gemini — nunca a git (usar agent_config.gd.example como plantilla)
+/scripts/agent/agent_config.gd

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://m0s4ch6ol5jh"]
+
+[ext_resource type="Script" uid="uid://cuxfmvi4qnr4g" path="res://scripts/agent/gemini_agent.gd" id="1_vmser"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ey6lv"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_vmser"]
+mix_rate = 24000.0
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_acpca"]
+
+[node name="Node3D" type="Node3D" unique_id=1047591550 node_paths=PackedStringArray("body", "voice", "mic_source")]
+script = ExtResource("1_vmser")
+api_key_override = "AIzaSyDvYbfMPKHA9PbeIDIlcfPbizjlSUUQAW8"
+body = NodePath("Body")
+voice = NodePath("Voice")
+mic_source = NodePath("MicSource")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=480534554]
+mesh = SubResource("SphereMesh_ey6lv")
+
+[node name="Voice" type="AudioStreamPlayer3D" parent="." unique_id=766152699]
+stream = SubResource("AudioStreamGenerator_vmser")
+
+[node name="MicSource" type="AudioStreamPlayer" parent="." unique_id=740496650]
+stream = SubResource("AudioStreamMicrophone_acpca")
+autoplay = true
+bus = &"Capture"
+
+[node name="Anim" type="AnimationPlayer" parent="." unique_id=1365013866]
