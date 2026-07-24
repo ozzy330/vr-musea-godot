@@ -28,7 +28,7 @@ glow_enabled = true
 
 [node name="Main" type="Node3D" unique_id=671727546]
 script = ExtResource("1_jyhfs")
-server_url = "https://vr-musea.ozzy330.com"
+server_url = "https://vr-musea.aecci-ucr.com"
 hall_scene = ExtResource("3_jyhfs")
 hall_spacing = 26.0
 hall_visibility_distance = 40.0

@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://d1tttfbkrkqq2" path="res://assets/sacate/sacate2_Image_4.png" id="14_wyflw"]
 [ext_resource type="Texture2D" uid="uid://dyp40vdy62mkn" path="res://assets/sacate/sacate2_Image_5.png" id="15_j2h53"]
 [ext_resource type="ArrayMesh" uid="uid://cyy3bn4tok8kn" path="res://assets/matas/mata2_PLANTS_1_wire_115115115-material.res" id="18_wyflw"]
-[ext_resource type="PackedScene" uid="uid://m0s4ch6ol5jh" path="res://scenes/agent/gemini_agent.tscn" id="19_j2h53"]
 
 [sub_resource type="MultiMesh" id="MultiMesh_avp52"]
 transform_format = 1
@@ -266,9 +265,6 @@ go_explode = null
 shape_type = 0
 go_make_colliders = null
 metadata/_custom_type_script = "uid://33ef8ifcx4bq"
-
-[node name="Node3D" parent="." unique_id=1047591550 instance=ExtResource("19_j2h53")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0718937, 1.8600254, 0.15671253)
 
 [editable path="hall"]
 [editable path="DoorOut/cypress_pot"]
